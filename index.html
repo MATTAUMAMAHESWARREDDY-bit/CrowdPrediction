@@ -163,6 +163,23 @@ th{
     display:none;
 }
 
+/* LIMIT BADGE */
+.limit-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.limit-value{
+    min-width:80px;
+    text-align:center;
+    padding:8px 10px;
+    border-radius:8px;
+    background:#f1f5f9;
+    font-weight:600;
+    color:#0f172a;
+}
+
 /* LOGIN MODAL */
 #loginBox{
     position:fixed;
@@ -228,21 +245,26 @@ footer{
 
         <button onclick="showTable()">Check Crowd</button>
 
+        <!-- UPDATED TABLE -->
         <table id="crowdTable">
             <tr>
                 <th>Time</th>
-                <th>Crowd</th>
+                <th>Crowd Count</th>
+                <th>Risk</th>
             </tr>
             <tr>
                 <td>Morning</td>
+                <td>5,00,000</td>
                 <td class="medium">Medium</td>
             </tr>
             <tr>
                 <td>Afternoon</td>
+                <td>4,20,000</td>
                 <td class="medium">Medium</td>
             </tr>
             <tr>
                 <td>Evening</td>
+                <td>9,90,000</td>
                 <td class="heavy">High</td>
             </tr>
         </table>
@@ -282,25 +304,47 @@ footer{
             </select>
 
             <label>Festival Name</label>
-            <input type="text">
+            <input type="text" placeholder="Eg: Sivaratri">
 
             <button>Add Festival</button>
         </div>
 
         <div id="dataSection" class="section">
+            <label>Temple</label>
+            <select>
+                <option>Select Temple</option>
+                <option>Tirupati</option>
+                <option>Sabarimala</option>
+            </select>
+
             <label>Festival</label>
             <select>
+                <option>Select Festival</option>
                 <option>Sivaratri</option>
+                <option>Brahmotsavam</option>
             </select>
 
             <label>Upload Dataset</label>
             <input type="file">
 
-            <label>High Crowd Limit</label>
-            <input type="number">
+            <!-- ADDED LOW LIMIT -->
+            <label>Low Crowd Limit</label>
+            <div class="limit-row">
+                <input type="number" id="lowLimit" placeholder="Eg: 200000" oninput="updateLimits()">
+                <div class="limit-value" id="lowVal">0</div>
+            </div>
 
             <label>Medium Crowd Limit</label>
-            <input type="number">
+            <div class="limit-row">
+                <input type="number" id="mediumLimit" placeholder="Eg: 400000" oninput="updateLimits()">
+                <div class="limit-value" id="mediumVal">0</div>
+            </div>
+
+            <label>High Crowd Limit</label>
+            <div class="limit-row">
+                <input type="number" id="highLimit" placeholder="Eg: 600000" oninput="updateLimits()">
+                <div class="limit-value" id="highVal">0</div>
+            </div>
 
             <button>Save Data</button>
         </div>
@@ -359,6 +403,17 @@ function showFestival(){
 function showData(){
     dataSection.style.display="block";
     festivalSection.style.display="none";
+}
+
+function updateLimits(){
+    document.getElementById("lowVal").innerText =
+        document.getElementById("lowLimit").value || 0;
+
+    document.getElementById("mediumVal").innerText =
+        document.getElementById("mediumLimit").value || 0;
+
+    document.getElementById("highVal").innerText =
+        document.getElementById("highLimit").value || 0;
 }
 </script>
 

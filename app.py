@@ -28,10 +28,13 @@ def init_db():
     cur.execute("""
     CREATE TABLE IF NOT EXISTS data_limits (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        temple TEXT,
         festival TEXT,
-        high_limit INTEGER,
+        low_limit INTEGER,
         medium_limit INTEGER,
-        dataset TEXT
+        high_limit INTEGER,
+        dataset TEXT,
+        updated_at TEXT
     )
     """)
 
@@ -55,7 +58,7 @@ init_db()
 def home():
     return send_file("index.html")
 
-# ADMIN LOGIN (simple check)
+# ADMIN LOGIN
 @app.route("/admin/login", methods=["POST"])
 def admin_login():
     data = request.json
@@ -78,12 +81,14 @@ def add_festival():
 
     return jsonify({"message":"Festival added"})
 
-# ADD DATA + LIMITS
+# ADD DATA + LIMITS (LOW + MEDIUM + HIGH)
 @app.route("/add-data", methods=["POST"])
 def add_data():
+    temple = request.form["temple"]
     festival = request.form["festival"]
-    high = request.form["high"]
-    medium = request.form["medium"]
+    low = int(request.form["low"])
+    medium = int(request.form["medium"])
+    high = int(request.form["high"])
     file = request.files["dataset"]
 
     path = os.path.join(UPLOAD_FOLDER, file.filename)
@@ -92,21 +97,46 @@ def add_data():
     con = get_db()
     cur = con.cursor()
     cur.execute("""
-    INSERT INTO data_limits (festival, high_limit, medium_limit, dataset)
-    VALUES (?,?,?,?)
-    """,(festival, high, medium, path))
+    INSERT INTO data_limits (temple, festival, low_limit, medium_limit, high_limit, dataset, updated_at)
+    VALUES (?,?,?,?,?,?,?)
+    """,(temple, festival, low, medium, high, path, datetime.now().strftime("%Y-%m-%d %H:%M")))
     con.commit()
     con.close()
 
     return jsonify({"message":"Data saved"})
 
-# GET CROWD STATUS (STATIC LOGIC for now)
+# GET CROWD STATUS (DEMO LOGIC)
 @app.route("/crowd")
 def crowd_status():
+    # Demo static numbers (later replace with ML prediction)
+    morning_count = 500000
+    afternoon_count = 420000
+    evening_count = 990000
+
+    def get_risk(count, low, medium, high):
+        if count <= low:
+            return "Low"
+        elif count <= medium:
+            return "Medium"
+        else:
+            return "High"
+
+    con = get_db()
+    cur = con.cursor()
+    cur.execute("SELECT low_limit, medium_limit, high_limit, updated_at FROM data_limits ORDER BY id DESC LIMIT 1")
+    row = cur.fetchone()
+    con.close()
+
+    if row:
+        low, medium, high, updated_at = row
+    else:
+        low, medium, high, updated_at = 200000, 400000, 600000, "N/A"
+
     return jsonify({
-        "Morning":"Medium",
-        "Afternoon":"Medium",
-        "Evening":"High"
+        "last_updated": updated_at,
+        "Morning": {"count": morning_count, "risk": get_risk(morning_count, low, medium, high)},
+        "Afternoon": {"count": afternoon_count, "risk": get_risk(afternoon_count, low, medium, high)},
+        "Evening": {"count": evening_count, "risk": get_risk(evening_count, low, medium, high)}
     })
 
 # ADD COMMENT
