@@ -6,203 +6,270 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI", Arial, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", Arial, sans-serif;
 }
-
 body{
-    background: linear-gradient(120deg, #eef2ff, #ecfeff);
-    min-height:100vh;
+  background: linear-gradient(120deg, #eef2ff, #ecfeff);
+  min-height:100vh;
 }
-
-/* HEADER */
 header{
-    background:#1e293b;
-    color:white;
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  background:#0f172a;
+  color:white;
+  padding:14px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
-
 header span{
-    font-size:20px;
-    font-weight:600;
+  font-size:18px;
+  font-weight:700;
+  line-height:1.25;
+  white-space:nowrap;
 }
-
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
 .header-btn{
-    background:#38bdf8;
-    border:none;
-    padding:8px 18px;
-    border-radius:20px;
-    cursor:pointer;
-    font-size:14px;
+  background:#1da1f2;
+  border:none;
+  padding:10px 18px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+  color:white;
+  width:auto !important;
+  min-width:130px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 }
-
 .header-btn:hover{
-    background:#0ea5e9;
-    color:white;
+  background:#0c8bdc;
+  color:white;
 }
-
 .logout-btn{
-    background:#ef4444;
-    color:white;
+  background:#f4b400;
+  color:#111827;
 }
-
-/* MAIN */
+.logout-btn:hover{
+  background:#dda300;
+  color:#111827;
+}
 .container{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    padding:40px;
-    flex-wrap:wrap;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:40px;
+  flex-wrap:wrap;
 }
-
-/* CARD */
 .card{
-    background:white;
-    width:420px;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.1);
+  background:white;
+  width:520px;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.1);
 }
-
 .card h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#1e293b;
+  text-align:center;
+  margin-bottom:20px;
+  color:#1e293b;
 }
-
 label{
-    display:block;
-    margin:10px 0 5px;
-    font-weight:500;
+  display:block;
+  margin:10px 0 5px;
+  font-weight:500;
 }
-
 select, input, textarea{
-    width:100%;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #cbd5e1;
-    margin-bottom:12px;
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #cbd5e1;
+  margin-bottom:12px;
 }
-
 textarea{
-    resize:none;
-    height:80px;
+  resize:none;
+  height:90px;
 }
-
 button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#22c55e;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#22c55e;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
 }
-
 button:hover{
-    background:#16a34a;
+  background:#16a34a;
 }
-
-/* TABLE */
 table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
-    display:none;
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+  display:none;
 }
-
 th, td{
-    padding:10px;
-    text-align:center;
-    border:1px solid #e2e8f0;
+  padding:10px;
+  text-align:center;
+  border:1px solid #e2e8f0;
 }
-
 th{
-    background:#1e293b;
-    color:white;
+  background:#1e293b;
+  color:white;
 }
-
-.heavy{ background:#fee2e2; color:#b91c1c; font-weight:600; }
-.medium{ background:#fef9c3; color:#92400e; font-weight:600; }
-
-/* COMMENTS */
+.heavy{
+  background:#fee2e2;
+  color:#b91c1c;
+  font-weight:600;
+}
+.medium{
+  background:#fef9c3;
+  color:#92400e;
+  font-weight:600;
+}
+.low{
+  background:#dcfce7;
+  color:#166534;
+  font-weight:600;
+}
 .comment{
-    background:#f8fafc;
-    padding:12px;
-    border-radius:10px;
-    margin-top:10px;
+  background:#f8fafc;
+  padding:12px;
+  border-radius:10px;
+  margin-top:10px;
 }
-
 .comment small{
-    color:gray;
+  color:gray;
 }
-
-/* ADMIN */
 .admin-section{
-    display:none;
+  display:none;
 }
-
-.button-group{
-    display:flex;
-    gap:15px;
-    margin-bottom:15px;
-}
-
-.button-group button{
-    background:#38bdf8;
-    color:#0f172a;
-}
-
 .section{
-    display:none;
+  display:none;
 }
-
-/* LIMIT BADGE */
 .limit-row{
-    display:flex;
-    align-items:center;
-    gap:10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
-
 .limit-value{
-    min-width:80px;
-    text-align:center;
-    padding:8px 10px;
-    border-radius:8px;
-    background:#f1f5f9;
-    font-weight:600;
-    color:#0f172a;
+  min-width:80px;
+  text-align:center;
+  padding:8px 10px;
+  border-radius:8px;
+  background:#f1f5f9;
+  font-weight:600;
+  color:#0f172a;
 }
-
-/* LOGIN MODAL */
 #loginBox{
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,0.5);
-    display:none;
-    justify-content:center;
-    align-items:center;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
 }
-
 #loginBox .login-card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    width:320px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  width:320px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+footer{
+  text-align:center;
+  padding:15px;
+  color:#475569;
+}
+.content-area{
+  margin-top:10px;
+}
+.manage-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  margin-top:10px;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+  background:#f8fafc;
+}
+.manage-item button{
+  width:auto !important;
+  min-width:88px;
+  padding:8px 14px;
+  border-radius:12px;
+  background:#ef4444;
+  color:white;
+  font-size:13px;
+  font-weight:600;
+}
+.manage-item button:hover{
+  background:#dc2626;
+}
+.manage-text{
+  flex:1;
+  text-align:left;
+  word-break:break-word;
+}
+.sub-card-title{
+  font-size:16px;
+  font-weight:600;
+  color:#1e293b;
+  margin:6px 0 10px;
+}
+.manage-top-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:18px;
+  align-items:center;
+  justify-content:center;
+}
+.manage-top-buttons button{
+  width:auto !important;
+  min-width:150px;
+  padding:10px 16px;
+  border-radius:14px;
+  background:#1e293b;
+  color:white;
+  font-size:14px;
+  font-weight:600;
+  border:1px solid rgba(255,255,255,0.12);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.manage-top-buttons button:hover{
+  background:#2b3b55;
+  color:white;
 }
 
-footer{
-    text-align:center;
-    padding:15px;
-    color:#475569;
+@media (max-width:900px){
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .header-right{
+    justify-content:flex-start;
+  }
+  .card{
+    width:95%;
+  }
 }
 </style>
 </head>
@@ -210,211 +277,821 @@ footer{
 <body>
 
 <header>
-    <span>🛕 Crowd Prediction System</span>
-    <button id="headerBtn" class="header-btn" onclick="openLogin()">Admin Login</button>
+  <span>🛕 Crowd Prediction System</span>
+
+  <!-- USER HEADER -->
+  <div id="userHeaderButtons" class="header-right">
+    <button class="header-btn" type="button" onclick="showCrowdSection()">Check Crowd</button>
+    <button class="header-btn" type="button" onclick="showAddComment()">Add Comment</button>
+    <button class="header-btn" type="button" onclick="showViewComments()">Watch Comments</button>
+    <button id="headerBtn" class="header-btn" type="button" onclick="openLogin()">Admin Login</button>
+  </div>
+
+  <!-- ADMIN HEADER -->
+  <div id="adminHeaderButtons" class="header-right" style="display:none;">
+    <button class="header-btn" type="button" onclick="showTemple()">Add Temple</button>
+    <button class="header-btn" type="button" onclick="showFestival()">Add Festival</button>
+    <button class="header-btn" type="button" onclick="showData()">Add Data</button>
+    <button class="header-btn" type="button" onclick="showManage()">Manage</button>
+    <button class="header-btn logout-btn" type="button" onclick="logout()">Logout</button>
+  </div>
 </header>
 
 <!-- LOGIN POPUP -->
 <div id="loginBox">
-    <div class="login-card">
-        <h2 style="text-align:center;margin-bottom:20px;">Admin Login</h2>
-        <input id="username" type="text" placeholder="Admin ID">
-        <input id="password" type="password" placeholder="Password">
-        <button onclick="checkLogin()">Login</button>
-    </div>
+  <div class="login-card">
+    <h2 style="text-align:center;margin-bottom:20px;">Admin Login</h2>
+    <input id="username" type="text" placeholder="Admin ID">
+    <input id="password" type="password" placeholder="Password">
+    <button type="button" onclick="checkLogin()">Login</button>
+  </div>
 </div>
 
 <!-- USER PAGE -->
 <div id="userPage" class="container">
+  <div class="card">
+    <h2>User Panel</h2>
 
-    <div class="card">
-        <h2>Check Crowd Status</h2>
+    <div id="userContent" class="content-area">
+
+      <!-- CHECK CROWD -->
+      <div id="crowdSection">
+        <div class="sub-card-title">Check Crowd Status</div>
 
         <label>Temple</label>
-        <select>
-            <option>Select Temple</option>
-            <option>Tirupati</option>
-            <option>Sabarimala</option>
+        <select id="userTemple" onchange="loadFestivalDropdownForUser()">
+          <option>Select Temple</option>
         </select>
 
         <label>Festival</label>
-        <select>
-            <option>Select Festival</option>
-            <option>Sivaratri</option>
+        <select id="userFestival">
+          <option>Select Festival</option>
         </select>
 
-        <button onclick="showTable()">Check Crowd</button>
+        <button type="button" onclick="loadCrowd()">Check Crowd</button>
 
-        <!-- UPDATED TABLE -->
         <table id="crowdTable">
-            <tr>
-                <th>Time</th>
-                <th>Crowd Count</th>
-                <th>Risk</th>
-            </tr>
-            <tr>
-                <td>Morning</td>
-                <td>5,00,000</td>
-                <td class="medium">Medium</td>
-            </tr>
-            <tr>
-                <td>Afternoon</td>
-                <td>4,20,000</td>
-                <td class="medium">Medium</td>
-            </tr>
-            <tr>
-                <td>Evening</td>
-                <td>9,90,000</td>
-                <td class="heavy">High</td>
-            </tr>
+          <tr>
+            <th>Time</th>
+            <th>Crowd Count</th>
+            <th>Risk</th>
+          </tr>
+          <tr>
+            <td>Morning</td>
+            <td id="mCount">-</td>
+            <td id="mRisk">-</td>
+          </tr>
+          <tr>
+            <td>Afternoon</td>
+            <td id="aCount">-</td>
+            <td id="aRisk">-</td>
+          </tr>
+          <tr>
+            <td>Evening</td>
+            <td id="eCount">-</td>
+            <td id="eRisk">-</td>
+          </tr>
         </table>
+      </div>
+
+      <!-- ADD COMMENT -->
+      <div id="addCommentSection" class="section">
+        <div class="sub-card-title">Add Comment</div>
+
+        <label>Temple</label>
+        <select id="commentTemple" onchange="loadFestivalDropdownForComment()">
+          <option>Select Temple</option>
+        </select>
+
+        <label>Festival</label>
+        <select id="commentFestival">
+          <option>Select Festival</option>
+        </select>
+
+        <label>Email</label>
+        <input id="cEmail" type="email" placeholder="Email">
+
+        <label>Comment</label>
+        <textarea id="cText" placeholder="Write comment..."></textarea>
+
+        <button type="button" onclick="postComment()">Save Comment</button>
+      </div>
+
+      <!-- WATCH COMMENTS -->
+      <div id="viewCommentSection" class="section">
+        <div class="sub-card-title">Watch Comments</div>
+
+        <label>Temple</label>
+        <select id="watchTemple" onchange="loadFestivalDropdownForWatch()">
+          <option>Select Temple</option>
+        </select>
+
+        <label>Festival</label>
+        <select id="watchFestival">
+          <option>Select Festival</option>
+        </select>
+
+        <button type="button" onclick="watchComments()">Show Comments</button>
+
+        <div id="commentsList"></div>
+      </div>
+
     </div>
-
-    <div class="card">
-        <h2>User Comments</h2>
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Write comment..."></textarea>
-        <button>Post Comment</button>
-
-        <div class="comment">
-            <strong>user@gmail.com</strong>
-            <p>Evening is very crowded.</p>
-            <small>12 Feb 2026</small>
-        </div>
-    </div>
-
+  </div>
 </div>
 
 <!-- ADMIN PAGE -->
 <div id="adminPage" class="container admin-section">
+  <div class="card">
+    <h2>Admin Panel</h2>
 
-    <div class="card">
-        <h2>Admin Panel</h2>
+    <div id="adminContent" class="content-area">
 
-        <div class="button-group">
-            <button onclick="showFestival()">Add Festival</button>
-            <button onclick="showData()">Add Data</button>
+      <!-- ADD TEMPLE -->
+      <div id="templeSection" class="section">
+        <div class="sub-card-title">Add Temple</div>
+
+        <label>Temple Name</label>
+        <input id="tName" type="text" placeholder="Eg: Sabarimala">
+        <button type="button" onclick="addTemple()">Add Temple</button>
+      </div>
+
+      <!-- ADD FESTIVAL -->
+      <div id="festivalSection" class="section">
+        <div class="sub-card-title">Add Festival</div>
+
+        <label>Temple</label>
+        <select id="fTemple">
+          <option>Select Temple</option>
+        </select>
+
+        <label>Festival Name</label>
+        <input id="fName" type="text" placeholder="Eg: Sankranthi">
+        <button type="button" onclick="addFestival()">Add Festival</button>
+      </div>
+
+      <!-- ADD DATA -->
+      <div id="dataSection" class="section">
+        <div class="sub-card-title">Add Data</div>
+
+        <label>Temple</label>
+        <select id="dTemple" onchange="loadFestivalDropdownForAdmin()">
+          <option>Select Temple</option>
+        </select>
+
+        <label>Festival</label>
+        <select id="dFestival">
+          <option>Select Festival</option>
+        </select>
+
+        <label>Upload Dataset</label>
+        <input id="dFile" type="file">
+
+        <label>Low Crowd Limit</label>
+        <div class="limit-row">
+          <input type="number" id="lowLimit" oninput="updateLimits()">
+          <div class="limit-value" id="lowVal">0</div>
         </div>
 
-        <div id="festivalSection" class="section">
-            <label>Temple</label>
-            <select>
-                <option>Tirupati</option>
-                <option>Sabarimala</option>
-            </select>
-
-            <label>Festival Name</label>
-            <input type="text" placeholder="Eg: Sivaratri">
-
-            <button>Add Festival</button>
+        <label>Medium Crowd Limit</label>
+        <div class="limit-row">
+          <input type="number" id="mediumLimit" oninput="updateLimits()">
+          <div class="limit-value" id="mediumVal">0</div>
         </div>
 
-        <div id="dataSection" class="section">
-            <label>Temple</label>
-            <select>
-                <option>Select Temple</option>
-                <option>Tirupati</option>
-                <option>Sabarimala</option>
-            </select>
-
-            <label>Festival</label>
-            <select>
-                <option>Select Festival</option>
-                <option>Sivaratri</option>
-                <option>Brahmotsavam</option>
-            </select>
-
-            <label>Upload Dataset</label>
-            <input type="file">
-
-            <!-- ADDED LOW LIMIT -->
-            <label>Low Crowd Limit</label>
-            <div class="limit-row">
-                <input type="number" id="lowLimit" placeholder="Eg: 200000" oninput="updateLimits()">
-                <div class="limit-value" id="lowVal">0</div>
-            </div>
-
-            <label>Medium Crowd Limit</label>
-            <div class="limit-row">
-                <input type="number" id="mediumLimit" placeholder="Eg: 400000" oninput="updateLimits()">
-                <div class="limit-value" id="mediumVal">0</div>
-            </div>
-
-            <label>High Crowd Limit</label>
-            <div class="limit-row">
-                <input type="number" id="highLimit" placeholder="Eg: 600000" oninput="updateLimits()">
-                <div class="limit-value" id="highVal">0</div>
-            </div>
-
-            <button>Save Data</button>
+        <label>High Crowd Limit</label>
+        <div class="limit-row">
+          <input type="number" id="highLimit" oninput="updateLimits()">
+          <div class="limit-value" id="highVal">0</div>
         </div>
+
+        <button type="button" onclick="addData()">Save Data</button>
+      </div>
+
+      <!-- MANAGE -->
+      <div id="manageSection" class="section">
+        <div class="sub-card-title">Manage</div>
+
+        <div class="manage-top-buttons">
+          <button type="button" onclick="showDeleteFestival()">Delete Festival</button>
+          <button type="button" onclick="showDeleteComment()">Delete Comment</button>
+        </div>
+
+        <div id="deleteFestivalSection" class="section">
+          <label>Select Temple</label>
+          <select id="deleteFestivalTemple" onchange="loadFestivalsForDelete()">
+            <option>Select Temple</option>
+          </select>
+
+          <div id="festivalDeleteList" style="margin-top:15px;"></div>
+        </div>
+
+        <div id="deleteCommentSection" class="section">
+          <div id="commentDeleteList" style="margin-top:15px;"></div>
+        </div>
+      </div>
+
     </div>
-
+  </div>
 </div>
 
-<footer>
-    © 2026 Crowd Prediction System
-</footer>
+<footer>© 2026 Crowd Prediction System</footer>
 
 <script>
-function showTable(){
-    document.getElementById("crowdTable").style.display="table";
-}
-
 function openLogin(){
-    document.getElementById("loginBox").style.display="flex";
-}
-
-function checkLogin(){
-    let u = document.getElementById("username").value;
-    let p = document.getElementById("password").value;
-
-    if(u === "mahi" && p === "mahi4248"){
-        document.getElementById("loginBox").style.display="none";
-        login();
-    }else{
-        alert("Invalid Admin ID or Password");
-    }
-}
-
-function login(){
-    document.getElementById("userPage").style.display="none";
-    document.getElementById("adminPage").style.display="flex";
-    let btn = document.getElementById("headerBtn");
-    btn.innerText="Logout";
-    btn.classList.add("logout-btn");
-    btn.onclick=logout;
-}
-
-function logout(){
-    document.getElementById("adminPage").style.display="none";
-    document.getElementById("userPage").style.display="flex";
-    let btn = document.getElementById("headerBtn");
-    btn.innerText="Admin Login";
-    btn.classList.remove("logout-btn");
-    btn.onclick=openLogin;
-}
-
-function showFestival(){
-    festivalSection.style.display="block";
-    dataSection.style.display="none";
-}
-
-function showData(){
-    dataSection.style.display="block";
-    festivalSection.style.display="none";
+  document.getElementById("loginBox").style.display = "flex";
 }
 
 function updateLimits(){
-    document.getElementById("lowVal").innerText =
-        document.getElementById("lowLimit").value || 0;
-
-    document.getElementById("mediumVal").innerText =
-        document.getElementById("mediumLimit").value || 0;
-
-    document.getElementById("highVal").innerText =
-        document.getElementById("highLimit").value || 0;
+  document.getElementById("lowVal").innerText = document.getElementById("lowLimit").value || 0;
+  document.getElementById("mediumVal").innerText = document.getElementById("mediumLimit").value || 0;
+  document.getElementById("highVal").innerText = document.getElementById("highLimit").value || 0;
 }
+
+/* ---------------- USER SECTION SWITCH ---------------- */
+
+function hideUserSections(){
+  document.getElementById("crowdSection").style.display = "none";
+  document.getElementById("addCommentSection").style.display = "none";
+  document.getElementById("viewCommentSection").style.display = "none";
+}
+
+function showCrowdSection(){
+  hideUserSections();
+  document.getElementById("crowdSection").style.display = "block";
+}
+
+function showAddComment(){
+  hideUserSections();
+  document.getElementById("addCommentSection").style.display = "block";
+}
+
+function showViewComments(){
+  hideUserSections();
+  document.getElementById("viewCommentSection").style.display = "block";
+}
+
+/* ---------------- ADMIN SECTION SWITCH ---------------- */
+
+function hideAllAdminSections(){
+  document.getElementById("templeSection").style.display = "none";
+  document.getElementById("festivalSection").style.display = "none";
+  document.getElementById("dataSection").style.display = "none";
+  document.getElementById("manageSection").style.display = "none";
+  document.getElementById("deleteFestivalSection").style.display = "none";
+  document.getElementById("deleteCommentSection").style.display = "none";
+}
+
+function showTemple(){
+  hideAllAdminSections();
+  document.getElementById("templeSection").style.display = "block";
+}
+
+function showFestival(){
+  hideAllAdminSections();
+  document.getElementById("festivalSection").style.display = "block";
+}
+
+function showData(){
+  hideAllAdminSections();
+  document.getElementById("dataSection").style.display = "block";
+}
+
+function showManage(){
+  hideAllAdminSections();
+  document.getElementById("manageSection").style.display = "block";
+}
+
+function showDeleteFestival(){
+  document.getElementById("manageSection").style.display = "block";
+  document.getElementById("deleteFestivalSection").style.display = "block";
+  document.getElementById("deleteCommentSection").style.display = "none";
+  loadTempleDropdowns();
+  loadFestivalsForDelete();
+}
+
+function showDeleteComment(){
+  document.getElementById("manageSection").style.display = "block";
+  document.getElementById("deleteCommentSection").style.display = "block";
+  document.getElementById("deleteFestivalSection").style.display = "none";
+  loadCommentsForDelete();
+}
+
+/* ---------------- LOGIN ---------------- */
+
+async function checkLogin(){
+  try{
+    let res = await fetch("/admin/login", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        username:document.getElementById("username").value,
+        password:document.getElementById("password").value
+      })
+    });
+
+    let data = await res.json();
+
+    if(data.status === "success"){
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("userPage").style.display = "none";
+      document.getElementById("adminPage").style.display = "flex";
+
+      document.getElementById("userHeaderButtons").style.display = "none";
+      document.getElementById("adminHeaderButtons").style.display = "flex";
+
+      await loadTempleDropdowns();
+      showTemple();
+    }else{
+      alert("Invalid Admin ID or Password");
+    }
+  }catch(e){
+    alert("Login failed");
+  }
+}
+
+function logout(){
+  document.getElementById("adminPage").style.display = "none";
+  document.getElementById("userPage").style.display = "flex";
+
+  document.getElementById("adminHeaderButtons").style.display = "none";
+  document.getElementById("userHeaderButtons").style.display = "flex";
+
+  hideAllAdminSections();
+  showCrowdSection();
+}
+
+/* ---------------- TEMPLE ---------------- */
+
+async function addTemple(){
+  let temple = document.getElementById("tName").value.trim();
+
+  if(!temple){
+    alert("Please enter temple name");
+    return;
+  }
+
+  try{
+    let fd = new FormData();
+    fd.append("temple", temple);
+
+    let res = await fetch("/add-temple", {
+      method:"POST",
+      body:fd
+    });
+
+    let data = await res.json();
+    alert(data.message || "Temple added");
+
+    document.getElementById("tName").value = "";
+    await loadTempleDropdowns();
+  }catch(e){
+    alert("Failed to add temple");
+  }
+}
+
+async function loadTempleDropdowns(){
+  try{
+    let res = await fetch("/temples");
+    let temples = await res.json();
+
+    let ids = ["userTemple", "commentTemple", "watchTemple", "fTemple", "dTemple", "deleteFestivalTemple"];
+
+    ids.forEach(id => {
+      let sel = document.getElementById(id);
+      if(!sel) return;
+
+      let current = sel.value;
+      sel.innerHTML = `<option>Select Temple</option>`;
+
+      temples.forEach(t => {
+        sel.innerHTML += `<option>${escapeHtml(t)}</option>`;
+      });
+
+      if(temples.includes(current)){
+        sel.value = current;
+      }
+    });
+  }catch(e){
+    console.log("Temple dropdown load failed");
+  }
+}
+
+/* ---------------- FESTIVAL ---------------- */
+
+async function addFestival(){
+  let temple = document.getElementById("fTemple").value;
+  let festival = document.getElementById("fName").value.trim();
+
+  if(!temple || temple === "Select Temple"){
+    alert("Please select temple");
+    return;
+  }
+
+  if(!festival){
+    alert("Please enter festival name");
+    return;
+  }
+
+  try{
+    let fd = new FormData();
+    fd.append("temple", temple);
+    fd.append("festival", festival);
+
+    let res = await fetch("/add-festival", {
+      method:"POST",
+      body:fd
+    });
+
+    let data = await res.json();
+    alert(data.message || "Festival added");
+
+    document.getElementById("fName").value = "";
+    await loadFestivalDropdownForUser();
+    await loadFestivalDropdownForComment();
+    await loadFestivalDropdownForWatch();
+    await loadFestivalDropdownForAdmin();
+    await loadFestivalsForDelete();
+  }catch(e){
+    alert("Failed to add festival");
+  }
+}
+
+async function loadFestivalDropdownForUser(){
+  let temple = document.getElementById("userTemple").value;
+  let sel = document.getElementById("userFestival");
+  sel.innerHTML = `<option>Select Festival</option>`;
+
+  if(!temple || temple === "Select Temple") return;
+
+  try{
+    let res = await fetch("/festivals?temple=" + encodeURIComponent(temple));
+    let festivals = await res.json();
+
+    festivals.forEach(f => {
+      sel.innerHTML += `<option>${escapeHtml(f)}</option>`;
+    });
+  }catch(e){
+    console.log("User festival load failed");
+  }
+}
+
+async function loadFestivalDropdownForComment(){
+  let temple = document.getElementById("commentTemple").value;
+  let sel = document.getElementById("commentFestival");
+  sel.innerHTML = `<option>Select Festival</option>`;
+
+  if(!temple || temple === "Select Temple") return;
+
+  try{
+    let res = await fetch("/festivals?temple=" + encodeURIComponent(temple));
+    let festivals = await res.json();
+
+    festivals.forEach(f => {
+      sel.innerHTML += `<option>${escapeHtml(f)}</option>`;
+    });
+  }catch(e){
+    console.log("Comment festival load failed");
+  }
+}
+
+async function loadFestivalDropdownForWatch(){
+  let temple = document.getElementById("watchTemple").value;
+  let sel = document.getElementById("watchFestival");
+  sel.innerHTML = `<option>Select Festival</option>`;
+
+  if(!temple || temple === "Select Temple") return;
+
+  try{
+    let res = await fetch("/festivals?temple=" + encodeURIComponent(temple));
+    let festivals = await res.json();
+
+    festivals.forEach(f => {
+      sel.innerHTML += `<option>${escapeHtml(f)}</option>`;
+    });
+  }catch(e){
+    console.log("Watch festival load failed");
+  }
+}
+
+async function loadFestivalDropdownForAdmin(){
+  let temple = document.getElementById("dTemple").value;
+  let sel = document.getElementById("dFestival");
+  sel.innerHTML = `<option>Select Festival</option>`;
+
+  if(!temple || temple === "Select Temple") return;
+
+  try{
+    let res = await fetch("/festivals?temple=" + encodeURIComponent(temple));
+    let festivals = await res.json();
+
+    festivals.forEach(f => {
+      sel.innerHTML += `<option>${escapeHtml(f)}</option>`;
+    });
+  }catch(e){
+    console.log("Admin festival load failed");
+  }
+}
+
+/* ---------------- DATA ---------------- */
+
+async function addData(){
+  let temple = document.getElementById("dTemple").value;
+  let festival = document.getElementById("dFestival").value;
+
+  if(!temple || temple === "Select Temple"){
+    alert("Please select temple");
+    return;
+  }
+
+  if(!festival || festival === "Select Festival"){
+    alert("Please select festival");
+    return;
+  }
+
+  let fileInput = document.getElementById("dFile");
+  if(fileInput.files.length === 0){
+    alert("Please select a dataset file");
+    return;
+  }
+
+  let fd = new FormData();
+  fd.append("temple", temple);
+  fd.append("festival", festival);
+  fd.append("low", document.getElementById("lowLimit").value);
+  fd.append("medium", document.getElementById("mediumLimit").value);
+  fd.append("high", document.getElementById("highLimit").value);
+  fd.append("dataset", fileInput.files[0]);
+
+  try{
+    let res = await fetch("/add-data", {
+      method:"POST",
+      body:fd
+    });
+
+    let data = await res.json();
+    alert(data.message || "Data saved");
+  }catch(e){
+    alert("Failed to save data");
+  }
+}
+
+/* ---------------- CROWD ---------------- */
+
+function setRisk(cell, risk){
+  cell.innerText = risk;
+  cell.classList.remove("low", "medium", "heavy");
+
+  let r = String(risk || "").toLowerCase();
+  if(r === "low"){
+    cell.classList.add("low");
+  }else if(r === "medium"){
+    cell.classList.add("medium");
+  }else if(r === "high"){
+    cell.classList.add("heavy");
+  }
+}
+
+async function loadCrowd(){
+  let temple = document.getElementById("userTemple").value;
+  let festival = document.getElementById("userFestival").value;
+
+  if(!temple || temple === "Select Temple"){
+    alert("Please select temple");
+    return;
+  }
+
+  if(!festival || festival === "Select Festival"){
+    alert("Please select festival");
+    return;
+  }
+
+  try{
+    let res = await fetch("/crowd?temple=" + encodeURIComponent(temple) + "&festival=" + encodeURIComponent(festival));
+    let data = await res.json();
+
+    document.getElementById("crowdTable").style.display = "table";
+
+    document.getElementById("mCount").innerText = data.Morning.count;
+    document.getElementById("aCount").innerText = data.Afternoon.count;
+    document.getElementById("eCount").innerText = data.Evening.count;
+
+    setRisk(document.getElementById("mRisk"), data.Morning.risk);
+    setRisk(document.getElementById("aRisk"), data.Afternoon.risk);
+    setRisk(document.getElementById("eRisk"), data.Evening.risk);
+  }catch(e){
+    alert("Failed to load crowd data");
+  }
+}
+
+/* ---------------- COMMENTS ---------------- */
+
+async function postComment(){
+  let temple = document.getElementById("commentTemple").value;
+  let festival = document.getElementById("commentFestival").value;
+  let email = document.getElementById("cEmail").value.trim();
+  let comment = document.getElementById("cText").value.trim();
+
+  if(!temple || temple === "Select Temple"){
+    alert("Please select temple");
+    return;
+  }
+
+  if(!festival || festival === "Select Festival"){
+    alert("Please select festival");
+    return;
+  }
+
+  if(!email){
+    alert("Please enter email");
+    return;
+  }
+
+  if(!comment){
+    alert("Please enter comment");
+    return;
+  }
+
+  try{
+    let fd = new FormData();
+    fd.append("temple", temple);
+    fd.append("festival", festival);
+    fd.append("email", email);
+    fd.append("comment", comment);
+
+    let res = await fetch("/comment", {
+      method:"POST",
+      body:fd
+    });
+
+    let data = await res.json();
+    alert(data.message || "Comment added");
+
+    document.getElementById("cText").value = "";
+  }catch(e){
+    alert("Failed to save comment");
+  }
+}
+
+async function watchComments(){
+  let temple = document.getElementById("watchTemple").value;
+  let festival = document.getElementById("watchFestival").value;
+  let box = document.getElementById("commentsList");
+
+  if(!temple || temple === "Select Temple"){
+    alert("Please select temple");
+    return;
+  }
+
+  if(!festival || festival === "Select Festival"){
+    alert("Please select festival");
+    return;
+  }
+
+  try{
+    let res = await fetch("/comments?temple=" + encodeURIComponent(temple) + "&festival=" + encodeURIComponent(festival));
+    let data = await res.json();
+
+    box.innerHTML = "";
+
+    if(data.length === 0){
+      box.innerHTML = `<div class="comment">No comments found</div>`;
+      return;
+    }
+
+    data.forEach(c => {
+      box.innerHTML += `
+        <div class="comment">
+          <strong>${escapeHtml(c.email)}</strong>
+          <p>${escapeHtml(c.comment)}</p>
+          <small>${escapeHtml(c.time)}</small>
+        </div>
+      `;
+    });
+  }catch(e){
+    box.innerHTML = `<div class="comment">Unable to load comments</div>`;
+  }
+}
+
+/* ---------------- MANAGE FESTIVALS ---------------- */
+
+async function loadFestivalsForDelete(){
+  let temple = document.getElementById("deleteFestivalTemple").value;
+  let box = document.getElementById("festivalDeleteList");
+  box.innerHTML = "";
+
+  if(!temple || temple === "Select Temple") return;
+
+  try{
+    let res = await fetch("/festivals?temple=" + encodeURIComponent(temple));
+    let festivals = await res.json();
+
+    if(festivals.length === 0){
+      box.innerHTML = `<div class="comment">No festivals found</div>`;
+      return;
+    }
+
+    festivals.forEach(f => {
+      box.innerHTML += `
+        <div class="manage-item">
+          <div class="manage-text">${escapeHtml(f)}</div>
+          <button type="button" onclick="deleteFestivalItem(${JSON.stringify(temple)}, ${JSON.stringify(f)})">Delete</button>
+        </div>
+      `;
+    });
+  }catch(e){
+    box.innerHTML = `<div class="comment">Failed to load festivals</div>`;
+  }
+}
+
+async function deleteFestivalItem(temple, festival){
+  if(!confirm("Delete this festival?")) return;
+
+  try{
+    let res = await fetch("/delete-festival?temple=" + encodeURIComponent(temple) + "&festival=" + encodeURIComponent(festival), {
+      method:"DELETE"
+    });
+
+    let data = await res.json();
+    alert(data.message || "Festival deleted");
+
+    await loadFestivalsForDelete();
+    await loadFestivalDropdownForUser();
+    await loadFestivalDropdownForComment();
+    await loadFestivalDropdownForWatch();
+    await loadFestivalDropdownForAdmin();
+  }catch(e){
+    alert("Failed to delete festival");
+  }
+}
+
+/* ---------------- MANAGE COMMENTS ---------------- */
+
+async function loadCommentsForDelete(){
+  let box = document.getElementById("commentDeleteList");
+  box.innerHTML = "";
+
+  try{
+    let res = await fetch("/comments");
+    let data = await res.json();
+
+    if(data.length === 0){
+      box.innerHTML = `<div class="comment">No comments found</div>`;
+      return;
+    }
+
+    data.forEach(c => {
+      box.innerHTML += `
+        <div class="manage-item">
+          <div class="manage-text">
+            <strong>${escapeHtml(c.email)}</strong><br>
+            <span><b>Temple:</b> ${escapeHtml(c.temple || "")}</span><br>
+            <span><b>Festival:</b> ${escapeHtml(c.festival || "")}</span><br>
+            ${escapeHtml(c.comment)}<br>
+            <small>${escapeHtml(c.time)}</small>
+          </div>
+          <button type="button" onclick="deleteCommentItem(${c.id})">Delete</button>
+        </div>
+      `;
+    });
+  }catch(e){
+    box.innerHTML = `<div class="comment">Failed to load comments</div>`;
+  }
+}
+
+async function deleteCommentItem(id){
+  if(!confirm("Delete this comment?")) return;
+
+  try{
+    let res = await fetch("/delete-comment?id=" + encodeURIComponent(id), {
+      method:"DELETE"
+    });
+
+    let data = await res.json();
+    alert(data.message || "Comment deleted");
+
+    await loadCommentsForDelete();
+  }catch(e){
+    alert("Failed to delete comment");
+  }
+}
+
+/* ---------------- HELPERS ---------------- */
+
+function escapeHtml(text){
+  if(text === null || text === undefined) return "";
+  return String(text)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+window.onload = async () => {
+  await loadTempleDropdowns();
+  showCrowdSection();
+};
 </script>
 
 </body>
