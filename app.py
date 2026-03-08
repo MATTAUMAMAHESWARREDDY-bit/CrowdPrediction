@@ -5,8 +5,9 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-DB = "database.db"
-UPLOAD_FOLDER = "datasets"
+RENDER_DISK_PATH = os.environ.get("RENDER_DISK_PATH", ".")
+DB = os.path.join(RENDER_DISK_PATH, "database.db")
+UPLOAD_FOLDER = os.path.join(RENDER_DISK_PATH, "datasets")
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 
